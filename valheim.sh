@@ -56,7 +56,7 @@ services:
       - ./valheim/server:/home/steam/valheim
       - ./valheim/backups:/home/steam/backups" >> docker-compose.yml'
 echo "@reboot root (cd /usr/games/serverconfig/ && docker-compose up)" > /etc/cron.d/awsgameserver
-cd /usr/games/serverconfig/saves/worlds_local
+cd /usr/games/serverconfig/valheim/saves/worlds_local/
 aws s3 cp s3://valheim-world-files-madk/Kattegat.db .
 aws s3 cp s3://valheim-world-files-madk/Kattegat.fwl .
 cd /usr/games/serverconfig
